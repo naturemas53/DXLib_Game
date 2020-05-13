@@ -16,24 +16,39 @@
     <Filter Include="ヘッダー ファイル\scene">
       <UniqueIdentifier>{4d2a14b6-6679-4982-8b81-b01140912ca0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\singleton">
+      <UniqueIdentifier>{0f64f079-9a06-4319-babe-2097fb9d1010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\scene">
+      <UniqueIdentifier>{0298a25d-cbd0-4605-b065-934998c82a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\singleton">
+      <UniqueIdentifier>{cc988b5e-89ac-4efd-baf1-d79d2881a0be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="source\scene\CSceneOwner.cpp">
-      <Filter>ヘッダー ファイル\scene</Filter>
+      <Filter>ソース ファイル\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\singleton\CSingleton.cpp">
+      <Filter>ソース ファイル\singleton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\common_util.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="source\scene\IScene.h">
       <Filter>ヘッダー ファイル\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\scene\CSceneOwner.h">
       <Filter>ヘッダー ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\singleton\CSingleton.h">
+      <Filter>ヘッダー ファイル\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="source\CommonUtil.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

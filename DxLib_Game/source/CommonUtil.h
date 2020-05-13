@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 /**
-* @file   common_util.h
+* @file   CommonUtil.h
 * @brief  ‹¤’Ê‚Åg‚¦‚é•Ö—˜‚È’è‹`‚Æ‚©‚ğ‘‚¢‚Ä‚¢‚é@‚Â‚à‚è‚Å‚·.
 * @author licrosea
 * @date 20200513

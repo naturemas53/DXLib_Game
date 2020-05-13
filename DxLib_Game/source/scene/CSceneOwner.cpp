@@ -6,7 +6,6 @@
 */
 
 #include "CSceneOwner.h"
-#include "../common_util.h"
 
 CSceneOwner::CSceneOwner() : m_currentScene( nullptr ), m_funcErrorPut( nullptr )
 {

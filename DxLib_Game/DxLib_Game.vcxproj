@@ -153,11 +153,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\scene\CSceneOwner.cpp" />
+    <ClCompile Include="source\singleton\CSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\common_util.h" />
+    <ClInclude Include="source\CommonUtil.h" />
     <ClInclude Include="source\scene\CSceneOwner.h" />
     <ClInclude Include="source\scene\IScene.h" />
+    <ClInclude Include="source\singleton\CSingleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

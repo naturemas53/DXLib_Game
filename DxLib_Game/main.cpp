@@ -7,6 +7,7 @@
 
 #include <windows.h>
 #include "DxLib.h"
+#include "source/singleton/CSingleton.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -18,6 +19,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	WaitKey();				// キー入力待ち
+
+	CSingletonFinalizer::Finalize(); // シングルトン終了処理.
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 
