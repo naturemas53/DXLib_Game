@@ -34,11 +34,12 @@ public:
 */
 template <typename T>
 class CSingleton final {
+
 public:
     /// インスタンスを取得します.
     static T& GetInstance() 
     {
-        std::call_once(sm_initFlag, this->Create);
+        std::call_once(sm_initFlag, CSingleton<T>::Create);
         assert(sm_instance);
         return *sm_instance;
     }
@@ -48,7 +49,7 @@ private:
     static void Create()
     {
         sm_instance = new T();
-        CSingletonFinalizer::addFinalizer(&CSingleton<T>::Destroy);
+        CSingletonFinalizer::AddFinalizer(&CSingleton<T>::Destroy);
     }
 
     /// インスタンスを破棄します.
