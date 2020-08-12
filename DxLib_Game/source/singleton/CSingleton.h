@@ -1,10 +1,10 @@
 #pragma once
 /**
 * @file  CSingleton.h
-* @brief ƒVƒ“ƒOƒ‹ƒgƒ“’è‹`.
+* @brief ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³å®šç¾©.
 * @author licrosea
 * @date 20200513
-* @details “–ƒtƒ@ƒCƒ‹‚ÌƒNƒ‰ƒX‚ÉŠÖ‚µ‚Ä‚ÍAŸ‚ÌURL‚ğQl‚É‚µ‚½‚à‚Ì‚Æ‚È‚è‚Ü‚·i‚Æ‚¢‚¤‚©ƒpƒN‚Á‚Ä‚Ü‚·...j.
+* @details å½“ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¯ãƒ©ã‚¹ã«é–¢ã—ã¦ã¯ã€æ¬¡ã®URLã‚’å‚è€ƒã«ã—ãŸã‚‚ã®ã¨ãªã‚Šã¾ã™ï¼ˆã¨ã„ã†ã‹ãƒ‘ã‚¯ã£ã¦ã¾ã™...ï¼‰.
 *          https://qiita.com/kikuuuty/items/fcf5f7df2f0493c437dc
 */
 
@@ -13,30 +13,30 @@
 
 /**
 * @class CSingletonFinalizer
-* @brief ƒVƒ“ƒOƒ‹ƒgƒ“‚Ì”jŠü‚ğ’S“–‚µ‚Ü‚·.
+* @brief ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ã®ç ´æ£„ã‚’æ‹…å½“ã—ã¾ã™.
 */
 class CSingletonFinalizer {
 private:
-    // ¶¬‚âƒRƒs[‚Ís‚í‚ê‚È‚¢.
+    // ç”Ÿæˆã‚„ã‚³ãƒ”ãƒ¼ã¯è¡Œã‚ã‚Œãªã„.
     CSingletonFinalizer();
     CSingletonFinalizer( CSingletonFinalizer& );
 public:
     using FinalizerFunc = void(*)();
-    /// I—¹ˆ—‚ğ’Ç‰Á‚µ‚Ü‚·.
+    /// çµ‚äº†å‡¦ç†ã‚’è¿½åŠ ã—ã¾ã™.
     static void AddFinalizer(FinalizerFunc func);
-    /// I—¹ˆ—‚ğs‚¢‚Ü‚·.
+    /// çµ‚äº†å‡¦ç†ã‚’è¡Œã„ã¾ã™.
     static void Finalize();
 };
 
 /**
 * @class CSingleton
-* @brief ƒVƒ“ƒOƒ‹ƒgƒ“‚Ìƒeƒ“ƒvƒŒ[ƒgƒNƒ‰ƒX‚Å‚·@‚±‚¿‚ç‚ğg‚¤‚ÆƒVƒ“ƒOƒ‹ƒgƒ“‰»‚·‚é‚±‚Æ‚ª‰Â”\‚Å‚·.
+* @brief ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚¯ãƒ©ã‚¹ã§ã™ã€€ã“ã¡ã‚‰ã‚’ä½¿ã†ã¨ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³åŒ–ã™ã‚‹ã“ã¨ãŒå¯èƒ½ã§ã™.
 */
 template <typename T>
 class CSingleton final {
 
 public:
-    /// ƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾‚µ‚Ü‚·.
+    /// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã—ã¾ã™.
     static T& GetInstance() 
     {
         std::call_once(sm_initFlag, CSingleton<T>::Create);
@@ -45,22 +45,22 @@ public:
     }
 
 private:
-    /// ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ü‚·.
+    /// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¾ã™.
     static void Create()
     {
         sm_instance = new T();
         CSingletonFinalizer::AddFinalizer(&CSingleton<T>::Destroy);
     }
 
-    /// ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ”jŠü‚µ‚Ü‚·.
+    /// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç ´æ£„ã—ã¾ã™.
     static void Destroy()
     {
         delete sm_instance;
         sm_instance = nullptr;
     }
 
-    static std::once_flag sm_initFlag; /// call_once‚ÌŒÄ‚Ño‚µ§ŒÀ‚Ég‚¢‚Ü‚·.
-    static T* sm_instance;             /// ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚Å‚·.
+    static std::once_flag sm_initFlag; /// call_onceã®å‘¼ã³å‡ºã—åˆ¶é™ã«ä½¿ã„ã¾ã™.
+    static T* sm_instance;             /// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿ã§ã™.
 };
 
 template <typename T> std::once_flag CSingleton<T>::sm_initFlag; 

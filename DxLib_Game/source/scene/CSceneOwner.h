@@ -1,7 +1,7 @@
 #pragma once
 /**
 * @file  CSceneOwner.h
-* @brief �V�[���I�[�i�[��`.
+* @brief シーンオーナー定義.
 * @author licrosea
 * @date 20200513
 */
@@ -10,36 +10,36 @@
 
 /**
 * @class CSceneOwner
-* @brief �V�[���I�[�i�[�ł��i�V�[���̐e�̂悤�ȗ����ʒu�ł��j.
+* @brief シーンオーナーです（シーンの親のような立ち位置です）.
 */
 class CSceneOwner final
 {
 private:
 
-	// ���̃N���X���R�s�[���邱�Ƃ͂Ȃ��@�͂�.
+	// このクラスをコピーすることはない　はず.
 	CSceneOwner( CSceneOwner& );
 
 public:
 
 	CSceneOwner();
 
-	// ���̃N���X�͌p������邱�Ƃ��Ȃ����߁A���z�f�X�g���N�^�ɂ��܂���.
+	// このクラスは継承されることがないため、仮想デストラクタにしません.
 	~CSceneOwner();
 
-	/// �V�[�����n�߂܂�.
+	/// シーンを始めます.
 	bool Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut = nullptr );
 
-	/// �V�[�����I�����܂�.
+	/// シーンを終了します.
 	void End();
 
-	/// �X�V���s���܂�.
+	/// 更新を行います.
 	bool Update();
 
 private:
 
-	/// �V�[���ύX���s���܂�.
+	/// シーン変更を行います.
 	bool ChangeScene( IScene* i_nextScene );
 
-	IScene* m_currentScene; // ���݂̃V�[���ł�.
-	FuncErrorPut m_funcErrorPut; // �G���[�o�͂̊֐��ł�.
+	IScene* m_currentScene; // 現在のシーンです.
+	FuncErrorPut m_funcErrorPut; // エラー出力の関数です.
 };

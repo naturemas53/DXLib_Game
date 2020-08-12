@@ -1,6 +1,6 @@
 /**
 * @file  CSceneFactory.cpp
-* @brief ƒV[ƒ“ƒtƒ@ƒNƒgƒŠ’è‹`.
+* @brief ã‚·ãƒ¼ãƒ³ãƒ•ã‚¡ã‚¯ãƒˆãƒªå®šç¾©.
 * @author licrosea
 * @date 20200513
 */
@@ -14,7 +14,7 @@ CSceneFactory::CSceneFactory()
 	m_sceneMap.clear();
 }
 
-/// ƒfƒXƒgƒ‰ƒNƒ^i‚±‚±‚Å‘SŠJ•ú‚ğs‚¢‚Ü‚·j.
+/// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ï¼ˆã“ã“ã§å…¨é–‹æ”¾ã‚’è¡Œã„ã¾ã™ï¼‰.
 CSceneFactory::~CSceneFactory()
 {
 	for ( MapScenePair itr : m_sceneMap )
@@ -26,24 +26,24 @@ CSceneFactory::~CSceneFactory()
 
 /**
 * @fn IScene* GetScene( EScene i_scene )
-* @brief ƒV[ƒ“‚ğæ“¾‚µ‚Ü‚·.
-* @param[in] i_scene æ“¾‚µ‚½‚¢ƒV[ƒ“‚Ì’è‹`–¼.
-* @return ³í‚Éæ“¾‚Å‚«‚ê‚ÎƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚ª@‚Å‚«‚È‚¯‚ê‚Îfalse‚ª•Ô‚è‚Ü‚·.
+* @brief ã‚·ãƒ¼ãƒ³ã‚’å–å¾—ã—ã¾ã™.
+* @param[in] i_scene å–å¾—ã—ãŸã„ã‚·ãƒ¼ãƒ³ã®å®šç¾©å.
+* @return æ­£å¸¸ã«å–å¾—ã§ãã‚Œã°ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿ãŒã€€ã§ããªã‘ã‚Œã°falseãŒè¿”ã‚Šã¾ã™.
 */
 IScene* CSceneFactory::GetScene( EScene i_scene )
 {
 	MapSceneItr itr = m_sceneMap.find( i_scene );
 
-	// ‚·‚Å‚É¶¬Ï‚İ‚Å‚ ‚ê‚Î‚»‚ê‚ğ•Ô‚·.
+	// ã™ã§ã«ç”Ÿæˆæ¸ˆã¿ã§ã‚ã‚Œã°ãã‚Œã‚’è¿”ã™.
 	if ( itr != m_sceneMap.end() )
 	{
 		return itr->second;
 	}
 
-	// ‚±‚±‚Ü‚Å—ˆ‚½ê‡‚Í‰‚ß‚Äw’è‚³‚ê‚½.
+	// ã“ã“ã¾ã§æ¥ãŸå ´åˆã¯åˆã‚ã¦æŒ‡å®šã•ã‚ŒãŸ.
 	IScene* scene = CreateScene( i_scene );
 
-	// ‚µ‚Á‚©‚è¶¬‚³‚ê‚Ä‚¢‚ê‚Î’Ç‰Á.
+	// ã—ã£ã‹ã‚Šç”Ÿæˆã•ã‚Œã¦ã„ã‚Œã°è¿½åŠ .
 	if ( scene != nullptr ) m_sceneMap[ i_scene ] = scene;
 
 	return scene;
@@ -51,10 +51,10 @@ IScene* CSceneFactory::GetScene( EScene i_scene )
 
 /**
 * @fn IScene* CreateScene( EScene i_scene )
-* @brief ƒV[ƒ“‚ğ¶¬‚µ‚Ü‚·.
-* @param[in] i_scene ¶¬‚µ‚½‚¢ƒV[ƒ“‚Ì’è‹`–¼.
-* @return ³í‚É¶¬‚Å‚«‚ê‚ÎƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚ª@‚Å‚«‚È‚¯‚ê‚Îfalse‚ª•Ô‚è‚Ü‚·.7
-* @details V‹KƒV[ƒ“ì¬‚ÍA‚±‚¿‚ç‚É¶¬‚Ìˆ—‚ğ‹Lq‚µ‚Ä‚­‚¾‚³‚¢.
+* @brief ã‚·ãƒ¼ãƒ³ã‚’ç”Ÿæˆã—ã¾ã™.
+* @param[in] i_scene ç”Ÿæˆã—ãŸã„ã‚·ãƒ¼ãƒ³ã®å®šç¾©å.
+* @return æ­£å¸¸ã«ç”Ÿæˆã§ãã‚Œã°ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿ãŒã€€ã§ããªã‘ã‚Œã°falseãŒè¿”ã‚Šã¾ã™.7
+* @details æ–°è¦ã‚·ãƒ¼ãƒ³ä½œæˆæ™‚ã¯ã€ã“ã¡ã‚‰ã«ç”Ÿæˆã®å‡¦ç†ã‚’è¨˜è¿°ã—ã¦ãã ã•ã„.
 */
 IScene* CSceneFactory::CreateScene( EScene i_scene )
 {

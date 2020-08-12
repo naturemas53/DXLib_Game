@@ -2,28 +2,28 @@
 #include <Windows.h>
 /**
 * @file   CommonUtil.h
-* @brief  ‹¤’Ê‚Åg‚¦‚é•Ö—˜‚È’è‹`‚Æ‚©‚ğ‘‚¢‚Ä‚¢‚é@‚Â‚à‚è‚Å‚·.
+* @brief  å…±é€šã§ä½¿ãˆã‚‹ä¾¿åˆ©ãªå®šç¾©ã¨ã‹ã‚’æ›¸ã„ã¦ã„ã‚‹ã€€ã¤ã‚‚ã‚Šã§ã™.
 * @author licrosea
 * @date 20200513
 */
 
 /**
 * @struct Vector2
-* @brief  2ŸŒ³ƒxƒNƒgƒ‹‚Ì\‘¢‘Ì‚Å‚·.
-*         ƒxƒNƒgƒ‹‚Æ‚µ‚Ä‚Ìg—p‚É‚Í‚à‚¿‚ë‚ñ‚Ì‚±‚ÆAƒTƒCƒY‚âˆÊ’uw’è‚É‚à‚Ç‚¤‚¼.
+* @brief  2æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«ã®æ§‹é€ ä½“ã§ã™.
+*         ãƒ™ã‚¯ãƒˆãƒ«ã¨ã—ã¦ã®ä½¿ç”¨ã«ã¯ã‚‚ã¡ã‚ã‚“ã®ã“ã¨ã€ã‚µã‚¤ã‚ºã‚„ä½ç½®æŒ‡å®šã«ã‚‚ã©ã†ã.
 */
 struct Vector2
 {
 	float x;
 	float y;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^.
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿.
 	Vector2() : x( 0 ), y( 0 )
 	{}
 	Vector2( float i_x, float i_y ) : x( i_x ), y( i_y )
 	{}
 
-	// ‰‰ZqƒI[ƒo[ƒ[ƒh.
+	// æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰.
 	Vector2& operator =(const Vector2 i_rhs )
 	{
 		this->x = i_rhs.x;
@@ -50,12 +50,12 @@ struct Vector2
 
 /**
 * @fn void safeDelete(T** obj)
-* @brief ‘½dŠJ•úiàNULLó‘Ô‚Å‚Ì‰ğ•új‚ğ–h‚®‰ğ•úŠÖ”‚Å‚·.
-* @param[in] obj ‰ğ•ú‚·‚éƒIƒuƒWƒFƒNƒg‚ğ“ü‚ê‚Ä‚­‚¾‚³‚¢.
+* @brief å¤šé‡é–‹æ”¾ï¼ˆâ‰’NULLçŠ¶æ…‹ã§ã®è§£æ”¾ï¼‰ã‚’é˜²ãè§£æ”¾é–¢æ•°ã§ã™.
+* @param[in] obj è§£æ”¾ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å…¥ã‚Œã¦ãã ã•ã„.
 */
 template <class T> inline void safeDelete(T** i_obj) {
 	if( (*i_obj) == nullptr ) return;
-	if( (*i_obj) == NULL    ) return; // ˆê‰‚±‚Á‚¿‚ÌŒ`®‚àƒ`ƒFƒbƒN.
+	if( (*i_obj) == NULL    ) return; // ä¸€å¿œã“ã£ã¡ã®å½¢å¼ã‚‚ãƒã‚§ãƒƒã‚¯.
 
 	delete (*i_obj);
 	(*i_obj) = nullptr;
