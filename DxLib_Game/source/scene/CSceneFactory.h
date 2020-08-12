@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 /**
 * @file  CSceneFactory.h
 * @brief シーンファクトリ定義.

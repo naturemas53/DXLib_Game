@@ -1,6 +1,6 @@
-/**
+ï»¿/**
 * @file  main.cpp
-* @brief ƒvƒƒOƒ‰ƒ€ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg‚Å‚·.
+* @brief ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆã§ã™.
 * @author licrosea
 * @date 20200513
 */
@@ -9,20 +9,21 @@
 #include "DxLib.h"
 #include "source/singleton/CSingleton.h"
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+/// MEMO : çŸ¥ã‚‰ãªã„ã†ã¡ã«ã€InOutçš„ãªã®ã‚’ã¤ã‘ãªã„ã¨ã„ã‘ãªããªã£ãŸã£ã½ã„ã§ã™...(20200812).
+int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 {
-	ChangeWindowMode( true ); // ƒEƒBƒ“ƒhƒEƒ‚[ƒh‚Éİ’è.
+	ChangeWindowMode( true ); // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã«è¨­å®š.
 	
-	if (DxLib_Init() == -1)		// ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»ˆ—
+	if (DxLib_Init() == -1)		// ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–å‡¦ç†
 	{
-		return -1;			// ƒGƒ‰[‚ª‹N‚«‚½‚ç’¼‚¿‚ÉI—¹
+		return -1;			// ã‚¨ãƒ©ãƒ¼ãŒèµ·ããŸã‚‰ç›´ã¡ã«çµ‚äº†
 	}
 
-	WaitKey();				// ƒL[“ü—Í‘Ò‚¿
+	WaitKey();				// ã‚­ãƒ¼å…¥åŠ›å¾…ã¡
 
-	CSingletonFinalizer::Finalize(); // ƒVƒ“ƒOƒ‹ƒgƒ“I—¹ˆ—.
+	CSingletonFinalizer::Finalize(); // ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³çµ‚äº†å‡¦ç†.
 
-	DxLib_End();				// ‚c‚wƒ‰ƒCƒuƒ‰ƒŠg—p‚ÌI—¹ˆ—
+	DxLib_End();				// ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªä½¿ç”¨ã®çµ‚äº†å‡¦ç†
 
-	return 0;				// ƒ\ƒtƒg‚ÌI—¹ 
+	return 0;				// ã‚½ãƒ•ãƒˆã®çµ‚äº† 
 }

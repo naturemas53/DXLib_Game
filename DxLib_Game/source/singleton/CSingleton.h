@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 /**
 * @file  CSingleton.h
 * @brief シングルトン定義.

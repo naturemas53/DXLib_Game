@@ -1,4 +1,4 @@
-/**
+﻿/**
 * @file  CSceneOwner.cpp
 * @brief シーンオーナー実装.
 * @author licrosea
