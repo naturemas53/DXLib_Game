@@ -7,27 +7,24 @@
 
 #include "CSceneOwner.h"
 
-CSceneOwner::CSceneOwner() : m_currentScene( nullptr ), m_funcErrorPut( nullptr )
+CSceneOwner::CSceneOwner() : m_currentScene( nullptr )
 {
 }
 
 CSceneOwner::~CSceneOwner()
 {
 	m_currentScene = nullptr;
-	m_funcErrorPut = nullptr;
 }
 
 /**
-* @fn bool Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut )
+* @fn bool Start( IScene* i_firstScene )
 * @brief シーンを開始します.
 * @param[in] i_firstScene どのシーンから始めるか.
-* @param[in] i_funcErrorPut エラー出力時の関数.
 * @return 正常に開始できればtrue できなければfalseを返します.
 */
-bool CSceneOwner::Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut )
+bool CSceneOwner::Start( IScene* i_firstScene )
 {
 	m_currentScene = i_firstScene;
-	m_funcErrorPut = i_funcErrorPut;
 
 	return this->ChangeScene( i_firstScene );
 }
@@ -70,7 +67,7 @@ bool CSceneOwner::ChangeScene( IScene* i_nextScene )
 
 	m_currentScene = i_nextScene;
 
-	if ( !m_currentScene->Initalize( m_funcErrorPut ) )
+	if ( !m_currentScene->Initalize( ) )
 	{
 		// 念のため、終了処理を行う.
 		m_currentScene->Finalize();

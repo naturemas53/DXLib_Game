@@ -8,9 +8,6 @@
 #include <functional>
 #include <string>
 
-/// エラー出力関数の定義.
-using FuncErrorPut = std::function< void( std::string errorStr ) >;
-
 /**
 * @interface IScene
 * @brief シーンのインターフェイスです.
@@ -26,12 +23,11 @@ public:
 	virtual ~IScene() {}; // 念のためデストラクタは書いとく　ってかこれをOKにしないと解放できない気が.
 
 	/**
-	* @fn bool Initalize( FuncErrorPut i_funcErrorPut )
+	* @fn bool Initalize()
 	* @brief シーンの初期化を行います.
-	* @param[in] i_funcErrorPut エラーメッセージの出力を行う関数を指定してください.
 	* @return 初期化成功でtrue 失敗時falseを返します.
 	*/
-	virtual bool Initalize( FuncErrorPut i_funcErrorPut = nullptr ) = 0;
+	virtual bool Initalize() = 0;
 
 	/**
 	* @fn void Finalize()
