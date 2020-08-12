@@ -1,6 +1,6 @@
 /**
 * @file  CSceneOwner.cpp
-* @brief ƒV[ƒ“ƒI[ƒi[À‘•.
+* @brief ã‚·ãƒ¼ãƒ³ã‚ªãƒ¼ãƒŠãƒ¼å®Ÿè£….
 * @author licrosea
 * @date 20200513
 */
@@ -19,10 +19,10 @@ CSceneOwner::~CSceneOwner()
 
 /**
 * @fn bool Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut )
-* @brief ƒV[ƒ“‚ğŠJn‚µ‚Ü‚·.
-* @param[in] i_firstScene ‚Ç‚ÌƒV[ƒ“‚©‚çn‚ß‚é‚©.
-* @param[in] i_funcErrorPut ƒGƒ‰[o—Í‚ÌŠÖ”.
-* @return ³í‚ÉŠJn‚Å‚«‚ê‚Îtrue ‚Å‚«‚È‚¯‚ê‚Îfalse‚ğ•Ô‚µ‚Ü‚·.
+* @brief ã‚·ãƒ¼ãƒ³ã‚’é–‹å§‹ã—ã¾ã™.
+* @param[in] i_firstScene ã©ã®ã‚·ãƒ¼ãƒ³ã‹ã‚‰å§‹ã‚ã‚‹ã‹.
+* @param[in] i_funcErrorPut ã‚¨ãƒ©ãƒ¼å‡ºåŠ›æ™‚ã®é–¢æ•°.
+* @return æ­£å¸¸ã«é–‹å§‹ã§ãã‚Œã°true ã§ããªã‘ã‚Œã°falseã‚’è¿”ã—ã¾ã™.
 */
 bool CSceneOwner::Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut )
 {
@@ -34,7 +34,7 @@ bool CSceneOwner::Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut )
 
 /**
 * @fn void End()
-* @brief ƒV[ƒ“‚ğI—¹‚µ‚Ü‚·.
+* @brief ã‚·ãƒ¼ãƒ³ã‚’çµ‚äº†ã—ã¾ã™.
 */
 void CSceneOwner::End()
 {
@@ -43,8 +43,8 @@ void CSceneOwner::End()
 
 /**
 * @fn bool Update()
-* @brief ƒV[ƒ“‚ğXV‚µ‚Ü‚·.
-* @return ³í‰Ò“­’†‚Ítrue –â‘è”­¶‚Åfalse‚ğ•Ô‚µ‚Ü‚·.
+* @brief ã‚·ãƒ¼ãƒ³ã‚’æ›´æ–°ã—ã¾ã™.
+* @return æ­£å¸¸ç¨¼åƒä¸­ã¯true å•é¡Œç™ºç”Ÿã§falseã‚’è¿”ã—ã¾ã™.
 */
 bool CSceneOwner::Update()
 {
@@ -52,7 +52,7 @@ bool CSceneOwner::Update()
 
 	IScene* nextScene = m_currentScene->Update();
 
-	// æ‚è‹}‚¬AƒV[ƒ“‘JˆÚ‚ª‚È‚¯‚ê‚ÎƒZ[ƒt‚Æ‚µ‚Ü‚·.
+	// å–ã‚Šæ€¥ãã€ã‚·ãƒ¼ãƒ³é·ç§»ãŒãªã‘ã‚Œã°ã‚»ãƒ¼ãƒ•ã¨ã—ã¾ã™.
 	if ( nextScene == nullptr ) return true;
 
 	return this->ChangeScene( nextScene );
@@ -60,9 +60,9 @@ bool CSceneOwner::Update()
 
 /**
 * @fn bool ChangeScene( IScene* i_nextScene )
-* @brief Ÿ‚ÌƒV[ƒ“‚ğŠJn‚µ‚Ü‚·.
-* @param[in] i_nextScene Ÿ‚ÉŠJn‚·‚éƒV[ƒ“.
-* @return ³í‚ÉŠJn‚Å‚«‚ê‚Îtrue ‚Å‚«‚È‚¯‚ê‚Îfalse‚ğ•Ô‚µ‚Ü‚·.
+* @brief æ¬¡ã®ã‚·ãƒ¼ãƒ³ã‚’é–‹å§‹ã—ã¾ã™.
+* @param[in] i_nextScene æ¬¡ã«é–‹å§‹ã™ã‚‹ã‚·ãƒ¼ãƒ³.
+* @return æ­£å¸¸ã«é–‹å§‹ã§ãã‚Œã°true ã§ããªã‘ã‚Œã°falseã‚’è¿”ã—ã¾ã™.
 */
 bool CSceneOwner::ChangeScene( IScene* i_nextScene )
 {
@@ -72,7 +72,7 @@ bool CSceneOwner::ChangeScene( IScene* i_nextScene )
 
 	if ( !m_currentScene->Initalize( m_funcErrorPut ) )
 	{
-		// ”O‚Ì‚½‚ßAI—¹ˆ—‚ğs‚¤.
+		// å¿µã®ãŸã‚ã€çµ‚äº†å‡¦ç†ã‚’è¡Œã†.
 		m_currentScene->Finalize();
 		return false;
 	}

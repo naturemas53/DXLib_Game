@@ -1,7 +1,7 @@
 #pragma once
 /**
 * @file  CSceneFactory.h
-* @brief ƒV[ƒ“ƒtƒ@ƒNƒgƒŠ’è‹`.
+* @brief ã‚·ãƒ¼ãƒ³ãƒ•ã‚¡ã‚¯ãƒˆãƒªå®šç¾©.
 * @author licrosea
 * @date 20200513
 */
@@ -14,40 +14,40 @@ class CSingleton;
 
 /**
 * @class CSceneFactory
-* @brief ƒV[ƒ“‚Ì¶¬‚ðs‚¢‚Ü‚·.
+* @brief ã‚·ãƒ¼ãƒ³ã®ç”Ÿæˆã‚’è¡Œã„ã¾ã™.
 */
 class CSceneFactory final
 {
-	// ƒVƒ“ƒOƒ‹ƒgƒ“ƒNƒ‰ƒX‚É¶¬‚ð‹–‚·‚½‚ßA‰º‹LƒNƒ‰ƒX‚ðƒtƒŒƒ“ƒh‚Æ‚µ‚Ä‚¢‚Ü‚·.
+	// ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ã‚¯ãƒ©ã‚¹ã«ç”Ÿæˆã‚’è¨±ã™ãŸã‚ã€ä¸‹è¨˜ã‚¯ãƒ©ã‚¹ã‚’ãƒ•ãƒ¬ãƒ³ãƒ‰ã¨ã—ã¦ã„ã¾ã™.
 	friend CSingleton<CSceneFactory>;
 
 private:
-	// ƒRƒs[A¶¬‚Í‹ÖŽ~‚Æ‚µ‚Ü‚·.
+	// ã‚³ãƒ”ãƒ¼ã€ç”Ÿæˆã¯ç¦æ­¢ã¨ã—ã¾ã™.
 	CSceneFactory();
 	CSceneFactory( CSceneFactory& );
 
 public:
-	// ‚±‚ÌƒNƒ‰ƒX‚ÍŒp³‚³‚ê‚é‚±‚Æ‚ª‚È‚¢‚½‚ßA‰¼‘zƒfƒXƒgƒ‰ƒNƒ^‚É‚µ‚Ü‚¹‚ñ.
+	// ã“ã®ã‚¯ãƒ©ã‚¹ã¯ç¶™æ‰¿ã•ã‚Œã‚‹ã“ã¨ãŒãªã„ãŸã‚ã€ä»®æƒ³ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã«ã—ã¾ã›ã‚“.
 	~CSceneFactory();
 
 	/**
 	* @enum  EScene
-	* @brief ƒCƒ“ƒXƒ^ƒ“ƒX‚ðŽæ“¾‚·‚éÛ‚ÉŽg—p‚µ‚Ü‚·.
-	*        ...‚ß‚ñ‚Ç‚­‚³‚¢‚©‚à‚µ‚ê‚Ü‚¹‚ñ‚ªAV‹KƒV[ƒ“‚ðì¬‚µ‚½Û‚Í.
-	*        ‚±‚¿‚ç‚ÉV’è‹`‚ð’Ç‰Á‚µA‚»‚ÌŒã.
-	*        CreateScene‚É¶¬ˆ—‚ð‹Lq‚µ‚Ä‰º‚³‚¢B(‚¢‚¢•û–@‚ªŽv‚¢‚Â‚©‚È‚©‚Á‚½‚ñ‚Å‚·...).
+	* @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã™ã‚‹éš›ã«ä½¿ç”¨ã—ã¾ã™.
+	*        ...ã‚ã‚“ã©ãã•ã„ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ãŒã€æ–°è¦ã‚·ãƒ¼ãƒ³ã‚’ä½œæˆã—ãŸéš›ã¯.
+	*        ã“ã¡ã‚‰ã«æ–°å®šç¾©ã‚’è¿½åŠ ã—ã€ãã®å¾Œ.
+	*        CreateSceneã«ç”Ÿæˆå‡¦ç†ã‚’è¨˜è¿°ã—ã¦ä¸‹ã•ã„ã€‚(ã„ã„æ–¹æ³•ãŒæ€ã„ã¤ã‹ãªã‹ã£ãŸã‚“ã§ã™...).
 	*/
 	enum class EScene
 	{
-		ESCENE_NUM // ƒV[ƒ“‘”@’Êí‚ÍŽg‚í‚È‚¢@‚Í‚¸...
+		ESCENE_NUM // ã‚·ãƒ¼ãƒ³ç·æ•°ã€€é€šå¸¸ã¯ä½¿ã‚ãªã„ã€€ã¯ãš...
 	};
 
-	/// ƒV[ƒ“‚ÌŽæ“¾‚ðs‚¢‚Ü‚·.
+	/// ã‚·ãƒ¼ãƒ³ã®å–å¾—ã‚’è¡Œã„ã¾ã™.
 	IScene* GetScene( EScene i_scene );
 
 private:
 
-	/// ƒV[ƒ“‚Ì¶¬‚ðs‚¢‚Ü‚·.
+	/// ã‚·ãƒ¼ãƒ³ã®ç”Ÿæˆã‚’è¡Œã„ã¾ã™.
 	IScene* CreateScene( EScene i_scene );
 
 	using MapSceneItr  = std::map< EScene, IScene* >::iterator;

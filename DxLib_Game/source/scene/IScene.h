@@ -1,55 +1,55 @@
 #pragma once
 /**
 * @file  IScene.h
-* @brief ƒV[ƒ“ƒCƒ“ƒ^[ƒtƒFƒCƒX’è‹`.
+* @brief ã‚·ãƒ¼ãƒ³ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å®šç¾©.
 * @author licrosea
 * @date 20200513
 */
 #include <functional>
 #include <string>
 
-/// ƒGƒ‰[o—ÍŠÖ”‚Ì’è‹`.
+/// ã‚¨ãƒ©ãƒ¼å‡ºåŠ›é–¢æ•°ã®å®šç¾©.
 using FuncErrorPut = std::function< void( std::string errorStr ) >;
 
 /**
 * @interface IScene
-* @brief ƒV[ƒ“‚ÌƒCƒ“ƒ^[ƒtƒFƒCƒX‚Å‚·.
+* @brief ã‚·ãƒ¼ãƒ³ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã§ã™.
 */
 class IScene
 {
 private:
-	IScene() {}; // ƒCƒ“ƒ^[ƒtƒFƒCƒX‚È‚Ì‚Å¶¬‹Ö~.
-	IScene( const IScene& ) {} // ‘½•ªƒRƒs[‚·‚é‚±‚Æ‚à‚È‚¢@‚Í‚¸.
+	IScene() {}; // ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ãªã®ã§ç”Ÿæˆç¦æ­¢.
+	IScene( const IScene& ) {} // å¤šåˆ†ã‚³ãƒ”ãƒ¼ã™ã‚‹ã“ã¨ã‚‚ãªã„ã€€ã¯ãš.
 
 public:
 
-	virtual ~IScene() {}; // ”O‚Ì‚½‚ßƒfƒXƒgƒ‰ƒNƒ^‚Í‘‚¢‚Æ‚­@‚Á‚Ä‚©‚±‚ê‚ğOK‚É‚µ‚È‚¢‚Æ‰ğ•ú‚Å‚«‚È‚¢‹C‚ª.
+	virtual ~IScene() {}; // å¿µã®ãŸã‚ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã¯æ›¸ã„ã¨ãã€€ã£ã¦ã‹ã“ã‚Œã‚’OKã«ã—ãªã„ã¨è§£æ”¾ã§ããªã„æ°—ãŒ.
 
 	/**
 	* @fn bool Initalize( FuncErrorPut i_funcErrorPut )
-	* @brief ƒV[ƒ“‚Ì‰Šú‰»‚ğs‚¢‚Ü‚·.
-	* @param[in] i_funcErrorPut ƒGƒ‰[ƒƒbƒZ[ƒW‚Ìo—Í‚ğs‚¤ŠÖ”‚ğw’è‚µ‚Ä‚­‚¾‚³‚¢.
-	* @return ‰Šú‰»¬Œ÷‚Åtrue ¸”sfalse‚ğ•Ô‚µ‚Ü‚·.
+	* @brief ã‚·ãƒ¼ãƒ³ã®åˆæœŸåŒ–ã‚’è¡Œã„ã¾ã™.
+	* @param[in] i_funcErrorPut ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®å‡ºåŠ›ã‚’è¡Œã†é–¢æ•°ã‚’æŒ‡å®šã—ã¦ãã ã•ã„.
+	* @return åˆæœŸåŒ–æˆåŠŸã§true å¤±æ•—æ™‚falseã‚’è¿”ã—ã¾ã™.
 	*/
 	virtual bool Initalize( FuncErrorPut i_funcErrorPut = nullptr ) = 0;
 
 	/**
 	* @fn void Finalize()
-	* @brief ƒV[ƒ“‚ÌI—¹ˆ—‚ğs‚¢‚Ü‚·.
+	* @brief ã‚·ãƒ¼ãƒ³ã®çµ‚äº†å‡¦ç†ã‚’è¡Œã„ã¾ã™.
 	*/
 	virtual void Finalize() = 0;
 
 	/**
 	* @fn IScene* Update()
-	* @brief ƒV[ƒ“‚ÌXV‚ğs‚¢‚Ü‚·.
-	* @return •ÊƒV[ƒ“‚É‘JˆÚ‚·‚éê‡‚ÍƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^‚ª ‚»‚êˆÈŠO‚Ínullptr‚ğ•Ô‚µ‚Ü‚·.
+	* @brief ã‚·ãƒ¼ãƒ³ã®æ›´æ–°ã‚’è¡Œã„ã¾ã™.
+	* @return åˆ¥ã‚·ãƒ¼ãƒ³ã«é·ç§»ã™ã‚‹å ´åˆã¯ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿ãŒ ãã‚Œä»¥å¤–ã¯nullptrã‚’è¿”ã—ã¾ã™.
 	*/
 	virtual IScene* Update() = 0;
 
 	/**
 	* @fn bool Draw()
-	* @brief ƒV[ƒ“‚Ì•`‰æ‚ğs‚¢‚Ü‚·.
-	* @return •`‰æ¬Œ÷‚Åtrue ‚»‚êˆÈŠO‚Ífalse‚ğ•Ô‚µ‚Ü‚·.
+	* @brief ã‚·ãƒ¼ãƒ³ã®æç”»ã‚’è¡Œã„ã¾ã™.
+	* @return æç”»æˆåŠŸã§true ãã‚Œä»¥å¤–ã¯falseã‚’è¿”ã—ã¾ã™.
 	*/
 	virtual bool Draw() = 0;
 };

@@ -1,9 +1,9 @@
 /**
 * @file  CSingleton.cpp
-* @brief ƒVƒ“ƒOƒ‹ƒgƒ“À‘•.
+* @brief ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³å®Ÿè£….
 * @author licrosea
 * @date 20200513
-* @details “–ƒtƒ@ƒCƒ‹‚ÌƒNƒ‰ƒX‚ÉŠÖ‚µ‚Ä‚ÍAŸ‚ÌURL‚ğQl‚É‚µ‚½‚à‚Ì‚Æ‚È‚è‚Ü‚·i‚Æ‚¢‚¤‚©ƒpƒN‚Á‚Ä‚Ü‚·...j.
+* @details å½“ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¯ãƒ©ã‚¹ã«é–¢ã—ã¦ã¯ã€æ¬¡ã®URLã‚’å‚è€ƒã«ã—ãŸã‚‚ã®ã¨ãªã‚Šã¾ã™ï¼ˆã¨ã„ã†ã‹ãƒ‘ã‚¯ã£ã¦ã¾ã™...ï¼‰.
 *          https://qiita.com/kikuuuty/items/fcf5f7df2f0493c437dc
 */
 #include "CSingleton.h"
@@ -11,10 +11,10 @@
 namespace
 {
 
-    constexpr int K_MAX_FINALIZER_SIZE = 256; // constexpr‚à’è”‚Ìˆêí‚Å‚·‚ªAŒvZ®‚È‚Ç‚à’è”‚É‚Å‚«‚é‚ç‚µ‚¢‚Å‚·@ƒŠƒeƒ‰ƒ‹Œ^‚É‚È‚é‚ç‚µ‚¢.
-    std::mutex gMutex; // ”r‘¼ˆ—... ƒXƒŒƒbƒhŠÔ‚Å‚Ìƒf[ƒ^‚â‚èæ‚è‚Å•s“s‡‚ª‹N‚«‚È‚¢‚æ‚¤‚É‚·‚é‚½‚ß‚ÌŠÇ—•Ï”‚Å‚·.
-    int gNumFinalizersSize = 0; // Œ»ó‚¢‚­‚Â“o˜^‚³‚ê‚Ä‚¢‚é‚©.
-    CSingletonFinalizer::FinalizerFunc gFinalizers[K_MAX_FINALIZER_SIZE] = {}; // I—¹ˆ—‚ÌƒŠƒXƒg.
+    constexpr int K_MAX_FINALIZER_SIZE = 256; // constexprã‚‚å®šæ•°ã®ä¸€ç¨®ã§ã™ãŒã€è¨ˆç®—å¼ãªã©ã‚‚å®šæ•°ã«ã§ãã‚‹ã‚‰ã—ã„ã§ã™ã€€ãƒªãƒ†ãƒ©ãƒ«å‹ã«ãªã‚‹ã‚‰ã—ã„.
+    std::mutex gMutex; // æ’ä»–å‡¦ç†... ã‚¹ãƒ¬ãƒƒãƒ‰é–“ã§ã®ãƒ‡ãƒ¼ã‚¿ã‚„ã‚Šå–ã‚Šã§ä¸éƒ½åˆãŒèµ·ããªã„ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã®ç®¡ç†å¤‰æ•°ã§ã™.
+    int gNumFinalizersSize = 0; // ç¾çŠ¶ã„ãã¤ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‹.
+    CSingletonFinalizer::FinalizerFunc gFinalizers[K_MAX_FINALIZER_SIZE] = {}; // çµ‚äº†å‡¦ç†ã®ãƒªã‚¹ãƒˆ.
 
 }
 
@@ -23,17 +23,17 @@ void CSingletonFinalizer::AddFinalizer(FinalizerFunc func)
     std::lock_guard<std::mutex> lock(gMutex);
     assert(gNumFinalizersSize < K_MAX_FINALIZER_SIZE);
 
-    gFinalizers[gNumFinalizersSize] = func; // Œ»ó‚ÌÅ‘å’lià––”öj‚Éİ’è.
+    gFinalizers[gNumFinalizersSize] = func; // ç¾çŠ¶ã®æœ€å¤§å€¤ï¼ˆâ‰’æœ«å°¾ï¼‰ã«è¨­å®š.
     gNumFinalizersSize++;
 }
 
 void CSingletonFinalizer::Finalize() 
 {
     std::lock_guard<std::mutex> lock(gMutex);
-    // ‚·‚×‚Ä‚ÌI—¹ˆ—‚ğs‚¢...
+    // ã™ã¹ã¦ã®çµ‚äº†å‡¦ç†ã‚’è¡Œã„...
     for (int i = gNumFinalizersSize - 1; i >= 0; --i) {
         (*gFinalizers[i])();
     }
-    // ƒŠƒZƒbƒg.
+    // ãƒªã‚»ãƒƒãƒˆ.
     gNumFinalizersSize = 0;
 }
