@@ -25,6 +25,12 @@
     <Filter Include="ソース ファイル\singleton">
       <UniqueIdentifier>{cc988b5e-89ac-4efd-baf1-d79d2881a0be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\game">
+      <UniqueIdentifier>{a09315d7-931f-4a3f-922c-e20d00f9aa22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\game">
+      <UniqueIdentifier>{25b3a38c-0026-4404-bf15-cc82054bacfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -37,6 +43,9 @@
       <Filter>ソース ファイル\singleton</Filter>
     </ClCompile>
     <ClCompile Include="source\scene\CSceneFactory.cpp">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scene\CSceneSample.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,6 +63,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="source\scene\CSceneFactory.h">
+      <Filter>ヘッダー ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scene\CSceneSample.h">
       <Filter>ヘッダー ファイル\scene</Filter>
     </ClInclude>
   </ItemGroup>

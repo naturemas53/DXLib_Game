@@ -15,8 +15,10 @@
 class IScene
 {
 private:
-	IScene() {}; // インターフェイスなので生成禁止.
-	IScene( const IScene& ) {} // 多分コピーすることもない　はず.
+	IScene( const IScene& ) {} // 多分コピーすることはない　はず.
+
+protected:
+	IScene() {}; // インターフェイスなので直接生成禁止.
 
 public:
 

@@ -154,12 +154,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\scene\CSceneFactory.cpp" />
     <ClCompile Include="source\scene\CSceneOwner.cpp" />
+    <ClCompile Include="source\scene\CSceneSample.cpp" />
     <ClCompile Include="source\singleton\CSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\CommonUtil.h" />
     <ClInclude Include="source\scene\CSceneFactory.h" />
     <ClInclude Include="source\scene\CSceneOwner.h" />
+    <ClInclude Include="source\scene\CSceneSample.h" />
     <ClInclude Include="source\scene\IScene.h" />
     <ClInclude Include="source\singleton\CSingleton.h" />
   </ItemGroup>

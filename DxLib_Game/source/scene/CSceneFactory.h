@@ -9,8 +9,7 @@
 #include <map>
 
 class IScene;
-template < class T >
-class CSingleton;
+template < class T > class CSingleton;
 
 /**
 * @class CSceneFactory
@@ -39,7 +38,8 @@ public:
 	*/
 	enum class EScene
 	{
-		ESCENE_NUM // シーン総数　通常は使わない　はず...
+		ESceneSamle, // サンプルシーン.
+		ESceneNum    // シーン総数　通常は使わない　はず...
 	};
 
 	/// シーンの取得を行います.

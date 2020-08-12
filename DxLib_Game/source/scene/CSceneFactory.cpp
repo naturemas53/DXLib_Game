@@ -9,6 +9,10 @@
 #include "IScene.h"
 #include "../CommonUtil.h"
 
+// MEMO : 以下派生後シーン.
+#include "CSceneSample.h"
+//        派生後シーン_ココマデ.
+
 CSceneFactory::CSceneFactory()
 {
 	m_sceneMap.clear();
@@ -19,7 +23,7 @@ CSceneFactory::~CSceneFactory()
 {
 	for ( MapScenePair itr : m_sceneMap )
 	{
-		safeDelete( &( itr.second ) );
+		SafeDelete( &( itr.second ) );
 	}
 	m_sceneMap.clear();
 }
@@ -61,6 +65,7 @@ IScene* CSceneFactory::CreateScene( EScene i_scene )
 	IScene* scene = nullptr;
 	switch ( i_scene )
 	{
+	case EScene::ESceneSamle: scene = new CSceneSample(); break;
 	default: break;
 	}
 

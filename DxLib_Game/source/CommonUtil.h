@@ -53,7 +53,7 @@ struct Vector2
 * @brief 多重開放（≒NULL状態での解放）を防ぐ解放関数です.
 * @param[in] obj 解放するオブジェクトを入れてください.
 */
-template <class T> inline void safeDelete(T** i_obj) {
+template <class T> inline void SafeDelete(T** i_obj) {
 	if( (*i_obj) == nullptr ) return;
 	if( (*i_obj) == NULL    ) return; // 一応こっちの形式もチェック.
 
