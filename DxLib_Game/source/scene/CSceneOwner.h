@@ -27,7 +27,7 @@ public:
 	~CSceneOwner();
 
 	/// シーンを始めます.
-	bool Start( IScene* i_firstScene, FuncErrorPut i_funcErrorPut = nullptr );
+	bool Start( IScene* i_firstScene );
 
 	/// シーンを終了します.
 	void End();
@@ -41,5 +41,4 @@ private:
 	bool ChangeScene( IScene* i_nextScene );
 
 	IScene* m_currentScene; // 現在のシーンです.
-	FuncErrorPut m_funcErrorPut; // エラー出力の関数です.
 };
