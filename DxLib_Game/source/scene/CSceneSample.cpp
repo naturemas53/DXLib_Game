@@ -6,6 +6,9 @@
 */
 
 #include "CSceneSample.h"
+#include "DxLib.h"
+#include "../singleton/CSingleton.h"
+#include "../game/CGameApplication.h"
 
 CSceneSample::CSceneSample()
 {}
@@ -37,6 +40,8 @@ void CSceneSample::Finalize()
 */
 IScene* CSceneSample::Update()
 {
+	WaitKey();
+	CSingleton< CGameApplication >::GetInstance()->RequestEndGame();
 
 	return nullptr;
 }

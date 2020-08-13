@@ -37,11 +37,11 @@ class CSingleton final {
 
 public:
     /// インスタンスを取得します.
-    static T& GetInstance() 
+    static T* GetInstance() 
     {
         std::call_once(sm_initFlag, CSingleton<T>::Create);
         assert(sm_instance);
-        return *sm_instance;
+        return sm_instance;
     }
 
 private:

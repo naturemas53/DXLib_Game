@@ -48,6 +48,9 @@
     <ClCompile Include="source\scene\CSceneSample.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
+    <ClCompile Include="source\game\CGameApplication.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\scene\IScene.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="source\scene\CSceneSample.h">
       <Filter>ヘッダー ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game\CGameApplication.h">
+      <Filter>ヘッダー ファイル\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
