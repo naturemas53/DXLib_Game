@@ -57,7 +57,7 @@ IScene* CSceneFactory::GetScene( EScene i_scene )
 * @fn IScene* CreateScene( EScene i_scene )
 * @brief シーンを生成します.
 * @param[in] i_scene 生成したいシーンの定義名.
-* @return 正常に生成できればインスタンスのポインタが　できなければfalseが返ります.7
+* @return 正常に生成できればインスタンスのポインタが　できなければfalseが返ります.
 * @details 新規シーン作成時は、こちらに生成の処理を記述してください.
 */
 IScene* CSceneFactory::CreateScene( EScene i_scene )
