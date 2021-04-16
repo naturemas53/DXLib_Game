@@ -1,4 +1,4 @@
-﻿/**
+/**
 * @file  CSceneFactory.cpp
 * @brief シーンファクトリ定義.
 * @author licrosea

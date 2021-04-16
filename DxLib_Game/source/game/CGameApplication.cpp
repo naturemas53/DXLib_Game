@@ -1,4 +1,4 @@
-﻿/**
+/**
 * @file   CGameApplication.cpp
 * @brief  ゲームアプリ管理クラス実装.
 * @author licrosea

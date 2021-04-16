@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 /**
 * @file   CGameApplication.h
 * @brief  ゲームアプリ管理クラス定義.

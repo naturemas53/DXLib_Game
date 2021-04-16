@@ -1,4 +1,4 @@
-﻿/**
+/**
 * @file  CSingleton.cpp
 * @brief シングルトン実装.
 * @author licrosea

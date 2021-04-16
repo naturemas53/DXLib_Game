@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 /**
 * @file   CSceneSample.h
 * @brief  シーン定義.

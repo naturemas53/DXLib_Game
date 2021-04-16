@@ -1,11 +1,15 @@
-﻿#pragma once
+#pragma once
 #include <Windows.h>
+#include <functional>
 /**
 * @file   CommonUtil.h
 * @brief  共通で使える便利な定義とかを書いている　つもりです.
 * @author licrosea
 * @date 20200513
 */
+
+/// ラムダ式の変数定義です.
+using MethodCallBack = std::function<void>;
 
 /**
 * @struct Vector2

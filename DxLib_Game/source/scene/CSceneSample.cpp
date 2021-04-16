@@ -1,4 +1,4 @@
-﻿/**
+/**
 * @file   CSceneSample.cpp
 * @brief  シーン実装.
 * @author licrosea

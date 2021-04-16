@@ -1,4 +1,4 @@
-﻿/**
+/**
 * @file  main.cpp
 * @brief プログラムエントリポイントです.
 * @author licrosea
