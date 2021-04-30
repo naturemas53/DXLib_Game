@@ -31,6 +31,15 @@
     <Filter Include="ヘッダー ファイル\game">
       <UniqueIdentifier>{25b3a38c-0026-4404-bf15-cc82054bacfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\game\controll">
+      <UniqueIdentifier>{b58e0c27-a9c3-4d96-ab18-f514340e5277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\common">
+      <UniqueIdentifier>{726cda3b-6ade-46f6-98f1-d1ce7e38abe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\game\controll\ConverterFactory">
+      <UniqueIdentifier>{4b66c76b-e63d-443e-8a75-2110cfe48e41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,9 +71,6 @@
     <ClInclude Include="source\singleton\CSingleton.h">
       <Filter>ヘッダー ファイル\singleton</Filter>
     </ClInclude>
-    <ClInclude Include="source\CommonUtil.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="source\scene\CSceneFactory.h">
       <Filter>ヘッダー ファイル\scene</Filter>
     </ClInclude>
@@ -73,6 +79,24 @@
     </ClInclude>
     <ClInclude Include="source\game\CGameApplication.h">
       <Filter>ヘッダー ファイル\game</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game\controll\IControllerInput.h">
+      <Filter>ヘッダー ファイル\game\controll</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game\controll\AControllerConverter.h">
+      <Filter>ヘッダー ファイル\game\controll</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game\controll\CGameController.h">
+      <Filter>ヘッダー ファイル\game\controll</Filter>
+    </ClInclude>
+    <ClInclude Include="source\common\CommonUtil.h">
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="source\common\CRepeat.h">
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game\controll\factory\CControllerConverterFactory.h">
+      <Filter>ヘッダー ファイル\game\controll\ConverterFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -159,8 +159,13 @@
     <ClCompile Include="source\singleton\CSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\CommonUtil.h" />
+    <ClInclude Include="source\common\CommonUtil.h" />
+    <ClInclude Include="source\common\CRepeat.h" />
     <ClInclude Include="source\game\CGameApplication.h" />
+    <ClInclude Include="source\game\controll\CGameController.h" />
+    <ClInclude Include="source\game\controll\AControllerConverter.h" />
+    <ClInclude Include="source\game\controll\factory\CControllerConverterFactory.h" />
+    <ClInclude Include="source\game\controll\IControllerInput.h" />
     <ClInclude Include="source\scene\CSceneFactory.h" />
     <ClInclude Include="source\scene\CSceneOwner.h" />
     <ClInclude Include="source\scene\CSceneSample.h" />
