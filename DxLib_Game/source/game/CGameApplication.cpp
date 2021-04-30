@@ -10,7 +10,7 @@
 #include "../singleton/CSingleton.h"
 #include "../scene/CSceneFactory.h"
 #include "../scene/CSceneOwner.h"
-#include "../CommonUtil.h"
+#include "../common/CommonUtil.h"
 #include "DxLib.h"
 
 // コンストラクタ.
